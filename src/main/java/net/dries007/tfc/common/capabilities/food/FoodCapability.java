@@ -189,6 +189,14 @@ public final class FoodCapability
                 TerraFirmaCraft.LOGGER.warn("Other mod issue: makeIcon() is annotated @OnlyIn(Dist.CLIENT), in tab {}", tab.getRecipeFolderName());
                 continue;
             }
+            catch (IllegalArgumentException e) {
+                TerraFirmaCraft.LOGGER.warn(
+                        "Other mod issue: makeIcon() is "
+                        + "annotated @OnlyIn(Dist.CLIENT), in tab {}",
+                        tab.getRecipeFolderName());
+
+                continue;
+            }
             setStackNonDecaying(stack);
         }
     }
